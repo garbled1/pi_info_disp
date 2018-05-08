@@ -1,0 +1,14 @@
+{
+    "chrome://browser/content/browser.xul": {
+        "navigator-toolbox": {
+            "iconsize": "small"
+        },
+        "main-window": {
+            "width": "1080",
+            "height": "1920",
+            "screenX": "0",
+            "screenY": "0",
+            "sizemode": "fullscreen"
+        }
+    }
+}

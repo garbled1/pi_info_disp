@@ -1,0 +1,239 @@
+<head>
+  <title>Kitchen Dashboard</title>
+  <meta name="viewport" content="width=1080 initial-scale=1, maximum-scale=1, user-scalable=no">
+</head>
+<style>
+  * {
+  box-sizing: border-box;
+  margin: 0px 0px 0px 0px;
+  border: none;
+  padding: 0;
+  }
+  div#forecast_embed {
+  color: antiquewhite;
+  }
+  .border iframe {
+  border: none;
+  margin: 0;
+  padding: 0;
+  display: block;
+  }
+  iframe {
+  border: none;
+  margin: 0;
+  padding: 0;
+  display: inline-block;
+  line-height: 0;
+  }
+  body {
+  font-family: Verdana, sans-serif;
+  color: antiquewhite;
+  }
+  img {vertical-align: top;}
+  /* Slideshow container */
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: relative;
+  bottom: 65px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: relative;
+  bottom: 28px;
+  left: 8px;
+}
+
+  #grid {
+  display: grid;
+  height: 1920px;
+  width: 1080px;
+  grid-template-rows: [main] 780px 220px 400px auto auto auto;
+  grid-template-columns: auto auto auto auto;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  }
+
+  #googlecal {
+  grid-column-start: 1;
+  grid-column-end: span 4;
+  grid-row-start: main;
+  grid-row-end: main;
+  background-color: #2d2626;
+  }
+  #wforecast {
+  background-color: #272727b3;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  }
+  #sunrise {
+  background-color: #2d2626;
+  grid-column-start: 4;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 2;
+  }
+  
+  #wmap {
+  background-color: #2d2626;
+  grid-column-start: 1;
+  grid-column-end: span 2;
+  grid-row-start: 3;
+  grid-row-end: 3;
+  }
+  #quote_one {
+  background-color: #2d2626;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 5;
+  grid-row-end: 5;
+  color: white;
+  }
+  #quote_two {
+  background-color: #2d2626;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 6;
+  grid-row-end: 6;
+  }
+  
+  #cameras {
+  background-color: #2d2626;
+  grid-column-start: 3;
+  grid-column-end: span 2;
+  grid-row-start: 3;
+  grid-row-end: 3;
+  }
+  #album {
+  background-color: #2d2626;
+  grid-column-start: 2;
+  grid-column-end: span 3;
+  grid-row-start: 4;
+  grid-row-end: span 3;
+  }
+  #clock {
+  background-color: #2d2626;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 4;
+  grid-row-end: 4;
+  }
+</style>
+
+
+<body>
+  <script>
+    function getRandomInt(min, max) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+    setInterval(function() {
+    document.getElementById('r_quote').src = document.getElementById('r_quote').src;
+    }, (7200 + getRandomInt(1, 3600))*1000)
+    
+    setInterval(function() {
+    document.getElementById('r_fortune').src = document.getElementById('r_fortune').src;
+    }, (1800 + getRandomInt(1, 3600))*1000)
+    
+    setInterval(function() {
+    document.getElementById('r_album').src = document.getElementById('r_album').src;
+    }, (1800 + getRandomInt(1, 3600))*1000)
+    
+    setInterval(function() {
+    document.getElementById('r_calendar').src = document.getElementById('r_calendar').src;
+    }, (1800 + getRandomInt(1, 3600))*1000)
+
+    setInterval(function() {
+    document.getElementById('forecast_embed').src = document.getElementById('forecast_embed').src;
+    }, (1800 + getRandomInt(1, 3600))*1000)
+
+  </script>
+
+<!-- <iframe src="http://free.timeanddate.com/clock/i67wxpaa/n197/fn6/fs32/fcfff/tc22d/ftb/bts4/btc00b/tt0/ta1" frameborder="0" width="981" height="45"></iframe> -->
+
+  
+<div id="grid">
+  <div id="googlecal" width=1080 tabindex="0">
+    <iframe id="r_calendar" src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;height=790&amp;wkst=1&amp;bgcolor=%232d2626&amp;src=thegarbledone%40gmail.com&amp;color=%232952A3&amp;src=annkeating1225%40gmail.com&amp;color=%235229A3&amp;src=%23contacts%40group.v.calendar.google.com&amp;color=%2328754E&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%23125A12&amp;src=ht3jlfaac5lfd6263ulfh4tql8%40group.calendar.google.com&amp;color=%23182C57&amp;ctz=America%2FPhoenix" style="border-width:0" width="1080" height="780" frameborder="0" scrolling="no" onload="this.contentWindow.focus()"></iframe>
+  </div>
+    <div id="wforecast">
+       <iframe id="forecast_embed" frameborder="0" height="220" width="880" src="http://forecast.io/embed/#lat=33.700163&lon=-112.228668&name=Peoria&color=antiquewhite"></iframe> 
+    </div>
+    <div id="sunrise">
+      <iframe src="http://sunsetsunrisetime.com/widget.php?view=true&amp;idcity=22060&amp;time=-7&amp;days=4&amp;text=054871" scrolling="no" width="200" height="220" frameborder="0"></iframe>
+    </div>
+    
+    <div id="wmap">
+      <iframe src="https://radblast.wunderground.com/cgi-bin/radar/WUNIDS_map?station=PHX&brand=wui&num=8&delay=25&type=NCR&frame=0&scale=0.500&noclutter=0&showstorms=5&mapx=400&mapy=240&centerx=400&centery=240&transx=0&transy=0&showlabels=1&severe=1&rainsnow=0&lightning=1&smooth=0&rand=25425648&lat=0&lon=0&label=you" frameborder="0" scrolling="no" width="540" height="100%">
+      </iframe>
+    </div>
+    <div id="cameras">
+      <img id="cam_img" src="http://axis-1/mjpg/1/video.mjpg?camera=1" width="540" height="400">
+      <div id="cam_num" class="numbertext">1 / 12</div>
+      <div id="cam_txt" class="text">Front Door</div>
+      <script>
+	var cont_index = 1;
+	var cam_index = 0;
+	var cameras = ["Front Door", "Front Door Side", "Kitchen Door",
+	  "Side Gate",
+	  "Side Yard", "BBQ", "North Rear", "Garage West",
+	  "Garage", "Cave Door", "Rear Patio", "Back Lawn"];
+	showSlides();
+	
+	function showSlides() {
+	  var cur;
+	  var img = document.getElementById("cam_img");
+	  var num = document.getElementById("cam_num");
+	  var txt = document.getElementById("cam_txt");
+	
+	 
+	  if (cam_index == 4) {
+	    cam_index = 1;
+	    if (cont_index == 3) {
+	      cont_index = 1;
+	    } else {
+	      cont_index++;
+	    }
+	  } else {
+	    cam_index++;
+	  }
+	  img.src = "http://axis-" + cont_index + "/mjpg/1/video.mjpg?camera=" + cam_index;
+	  cur = (cont_index - 1)*4 + (cam_index - 1);
+	  num.innerHTML = (cur+1) + " / 12";
+	  txt.innerHTML = cameras[cur];
+
+	  setTimeout(showSlides, 15000); // Change image every 15 seconds
+	}
+      </script>
+    </div>
+
+    <div id="quote_one">
+      <iframe id="r_quote" src="./qotd.html" frameborder="0" scrolling="no"></iframe>
+    </div>
+    <div id="quote_two">
+      <iframe id="r_fortune" src="http://wasat.garbled.net/cgi-bin/fortune.cgi" frameborder="0" scrolling="no"></iframe>
+    </div>
+    
+    <div id="album">
+      <iframe id="r_album" src="https://source.unsplash.com/random/800x540" scrolling="no" width="780" height="100%" frameborder="0" vertical-align="top" scrolling="no"></iframe>
+    </div>
+    <div id="clock">
+      <center>
+	<iframe src="http://free.timeanddate.com/clock/i684awhs/n197/szw210/szh210/hoc09f/hbw0/hfc09f/cf100/hnce1ead6/fas30/fdi66/mqc000/mql15/mqw4/mqd98/mhc000/mhl15/mhw4/mhd98/mmc000/mml10/mmw1/mmd98/hhs2/hms2" frameborder="0" width="210" height="210" scrolling="no"></iframe>
+      </center>
+    </div>
+  </div>
+  <!--  Ideas:
+       https://www.rainviewer.com/map.html?loc=33.062152,-112.011361,7&oFa=0&oC=0&oU=0&oCUB=1&oCS=1&oF=0&oAP=1&rmt=4
+  -->
+</body>

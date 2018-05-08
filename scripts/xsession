@@ -1,0 +1,11 @@
+#!/bin/sh
+# This tells X server to start /usr/bin/iceweasel at startup
+#exec /usr/bin/iceweasel https://google.com
+cp /etc/firefox-esr/xulstore.json /etc/firefox-esr/profile/
+xset -dpms
+xset s off
+xset s noblank
+unclutter &
+#matchbox-window-manager -user_cursor no -use_titlebar no &
+matchbox-window-manager -use_titlebar no &
+/usr/bin/iceweasel --profile /etc/firefox-esr/profile file:///info-disp/index.html
