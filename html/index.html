@@ -152,9 +152,19 @@
     setInterval(function() {
     document.getElementById('r_calendar').src = document.getElementById('r_calendar').src;
     }, (1800 + getRandomInt(1, 3600))*1000)
+    
+    setInterval(function() {
+    document.getElementById('r_sun').src = document.getElementById('r_sun').src;
+    }, (1800 + getRandomInt(1, 3600))*1000)
+    
+    setInterval(function() {
+    document.getElementById('r_wmap').src = document.getElementById('r_wmap').src;
+    }, (1800 + getRandomInt(1, 3600))*1000)
 
     setInterval(function() {
-    document.getElementById('forecast_embed').src = document.getElementById('forecast_embed').src;
+    var wprops = 'lat=33.700163&lon=-112.228668&name=Peoria&color=antiquewhite'
+    var url = 'http://forecast.io/embed/'
+    document.getElementById('r_forecast').src = url + '?ts=' + (Date.now()) + '#' + wprops;
     }, (1800 + getRandomInt(1, 3600))*1000)
 
   </script>
@@ -167,14 +177,14 @@
     <iframe id="r_calendar" src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;height=790&amp;wkst=1&amp;bgcolor=%232d2626&amp;src=thegarbledone%40gmail.com&amp;color=%232952A3&amp;src=annkeating1225%40gmail.com&amp;color=%235229A3&amp;src=%23contacts%40group.v.calendar.google.com&amp;color=%2328754E&amp;src=en.usa%23holiday%40group.v.calendar.google.com&amp;color=%23125A12&amp;src=ht3jlfaac5lfd6263ulfh4tql8%40group.calendar.google.com&amp;color=%23182C57&amp;ctz=America%2FPhoenix" style="border-width:0" width="1080" height="780" frameborder="0" scrolling="no" onload="this.contentWindow.focus()"></iframe>
   </div>
     <div id="wforecast">
-       <iframe id="forecast_embed" frameborder="0" height="220" width="880" src="http://forecast.io/embed/#lat=33.700163&lon=-112.228668&name=Peoria&color=antiquewhite"></iframe> 
+       <iframe id="r_forecast" frameborder="0" height="220" width="880" src="http://forecast.io/embed/#lat=33.700163&lon=-112.228668&name=Peoria&color=antiquewhite"></iframe> 
     </div>
     <div id="sunrise">
-      <iframe src="http://sunsetsunrisetime.com/widget.php?view=true&amp;idcity=22060&amp;time=-7&amp;days=4&amp;text=054871" scrolling="no" width="200" height="220" frameborder="0"></iframe>
+      <iframe id="r_sun" src="http://sunsetsunrisetime.com/widget.php?view=true&amp;idcity=22060&amp;time=-7&amp;days=4&amp;text=054871" scrolling="no" width="200" height="220" frameborder="0"></iframe>
     </div>
     
     <div id="wmap">
-      <iframe src="https://radblast.wunderground.com/cgi-bin/radar/WUNIDS_map?station=PHX&brand=wui&num=8&delay=25&type=NCR&frame=0&scale=0.500&noclutter=0&showstorms=5&mapx=400&mapy=240&centerx=400&centery=240&transx=0&transy=0&showlabels=1&severe=1&rainsnow=0&lightning=1&smooth=0&rand=25425648&lat=0&lon=0&label=you" frameborder="0" scrolling="no" width="540" height="100%">
+      <iframe id="r_wmap" src="https://radblast.wunderground.com/cgi-bin/radar/WUNIDS_map?station=PHX&brand=wui&num=8&delay=25&type=NCR&frame=0&scale=0.500&noclutter=0&showstorms=5&mapx=400&mapy=240&centerx=400&centery=240&transx=0&transy=0&showlabels=1&severe=1&rainsnow=0&lightning=1&smooth=0&rand=25425648&lat=0&lon=0&label=you" frameborder="0" scrolling="no" width="540" height="100%">
       </iframe>
     </div>
     <div id="cameras">
